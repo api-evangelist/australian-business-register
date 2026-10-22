@@ -1,0 +1,12 @@
+generated: '2026-10-22'
+method: none
+source: https://abr.business.gov.au/Tools/SampleCode
+packages: []
+checked:
+- https://abr.business.gov.au/Tools/SampleCode
+- https://github.com/ABN-SFLookupTechnicalSupport/ABNLookupSampleCode
+- https://registry.npmjs.org/-/v1/search?text=abn%20lookup
+note: No first-party registry package or SDK is published. The provider publishes sample code (Visual Basic, C#, Java, php, Python, Microsoft Access and Excel) in the GitHub repo ABN-SFLookupTechnicalSupport/ABNLookupSampleCode (last pushed 2023-08-17). That is not a versioned package. npm hits for "abn lookup" (@pipeworx/mcp-abn-lookup, @companydata/abn-lookup-api, is-valid-abn) are third-party.
+sample_code:
+  url: https://github.com/ABN-SFLookupTechnicalSupport/ABNLookupSampleCode
+  last_pushed: '2023-08-17'

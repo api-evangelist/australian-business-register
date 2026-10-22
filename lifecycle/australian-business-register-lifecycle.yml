@@ -1,0 +1,22 @@
+generated: '2026-10-22'
+method: searched
+source: https://abr.business.gov.au/Documentation/ChangeControl
+versioning:
+  scheme: versioned-operations
+  description: "Our change control approach aims to support existing users by creating new web methods when new information is made available through ABN Lookup."
+  docs: https://abr.business.gov.au/Documentation/ChangeControl
+  current_methods:
+  - SearchByABNv202001
+  docs_version: 9.9.7
+  recommendation: "If you are integrating the web services for the first time or upgrading your existing applications, we recommend that you use the latest web service method available."
+deprecation:
+  policy: "None published. Older methods (for example ABRSearchByABN, released in 2004) are still documented and listed in the WSDL alongside newer versions. No Sunset or Deprecation headers are documented."
+  deprecated_operations: []
+  service_termination_notice: "We may also terminate this agreement for our own reasons and without fault on your part providing we give you not less than 30 days prior written notice."
+  termination_source: https://abr.business.gov.au/Tools/WebServicesAgreement
+sla:
+  stated: false
+  text: "The ABN Lookup Web Services has been implemented in a technical environment designed to provide high availability and be reasonably fault tolerant."
+  source: https://abr.business.gov.au/Tools/WebServicesAgreement
+status_page: null
+outage_notifications: "We use your contact details to keep you informed of new features and planned outages for the ABN Lookup web services."

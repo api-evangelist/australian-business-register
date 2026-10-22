@@ -1,0 +1,86 @@
+generated: '2026-10-22'
+method: searched
+source: https://abr.business.gov.au/Documentation/Exceptions
+format: soap-xml-exception
+envelope:
+  fields:
+  - exceptionCode
+  - exceptionDescription
+  note: If an Application error occurs, the payload will contain an exception consisting of an exceptionCode and an exceptionDescription.
+http_errors:
+- Page not found (404)
+- Internal server error (500)
+note: Application errors come back inside the normal response payload, not as HTTP status codes. The status 200 on each row
+  is our reading of that, because the docs give no HTTP status for application errors. The codes are category labels (SEARCH,
+  WEBSERVICES), and the description text is the distinguishing value.
+problems:
+- status: 200
+  code: SEARCH
+  title: No records found
+- status: 200
+  code: WEBSERVICES
+  title: System problems have prevented this request from completing
+- status: 200
+  code: WEBSERVICES
+  title: Object to be transformed was not recognised - i.e not a Party, SearchResult or Request
+- status: 200
+  code: WEBSERVICES
+  title: The Include History flag must be 'Y' or 'N'
+- status: 200
+  code: WEBSERVICES
+  title: The GUID entered is not recognised as a Registered Party
+- status: 200
+  code: WEBSERVICES
+  title: The party identified by this GUID has not been registered for the requested service
+- status: 200
+  code: WEBSERVICES
+  title: Requested File does not exist either because it has not been published, it has been deleted, or the filename is incorrect
+- status: 200
+  code: WEBSERVICES
+  title: At least one Name Type must be selected (Y). Blank defaults to Y
+- status: 200
+  code: WEBSERVICES
+  title: At least one State must be selected (Y). Blank defaults to Y
+- status: 200
+  code: WEBSERVICES
+  title: A Filename must be entered
+- status: 200
+  code: WEBSERVICES
+  title: No name search criteria entered
+- status: 200
+  code: WEBSERVICES
+  title: Year must be between 1999 and 2026
+- status: 200
+  code: WEBSERVICES
+  title: Month must be between 1 and 12
+- status: 200
+  code: WEBSERVICES
+  title: The party identified by this GUID has not been registered to access the superannuation download file
+- status: 200
+  code: WEBSERVICES
+  title: The registration for the party identified by this GUID has been cancelled. Please contact ABNLookup.Support@industry.gov.au
+    for assistance
+- status: 200
+  code: WEBSERVICES
+  title: Name search type cannot be determined
+- status: 200
+  code: WEBSERVICES
+  title: The service requested is not known
+- status: 200
+  code: WEBSERVICES
+  title: An ABN is invalid in Name Search
+- status: 200
+  code: WEBSERVICES
+  title: An ASIC number is invalid in Name Search
+- status: 200
+  code: WEBSERVICES
+  title: An ACN is invalid in ABN Search
+- status: 200
+  code: WEBSERVICES
+  title: An ABN is invalid in ACN Search
+- status: 200
+  code: WEBSERVICES
+  title: The searchWidth field is not valid. Use either typical or narrow
+- status: 200
+  code: WEBSERVICES
+  title: A 'Yes/No' field is invalid. Use either Y or N

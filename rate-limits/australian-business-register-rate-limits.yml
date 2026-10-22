@@ -1,0 +1,13 @@
+name: Australian Business Register rate limits
+generated: '2026-10-22'
+method: none
+source: https://abr.business.gov.au/Tools/WebServicesAgreement
+checked:
+- https://abr.business.gov.au/Tools/WebServices
+- https://abr.business.gov.au/Documentation/WebServiceRegistration
+- https://abr.business.gov.au/Documentation/WebServiceMethods
+- https://abr.business.gov.au/Documentation/Exceptions
+- https://abr.business.gov.au/Tools/WebServicesAgreement
+limit_count: 0
+limits: []
+note: No request-rate, quota or throttling figures and no rate-limit headers are published. The agreement only says access "may be suspended if we feel it is necessary to protect our interests". The exceptions list includes a "Too many records found" application error, which is a result-size condition, not a rate limit.

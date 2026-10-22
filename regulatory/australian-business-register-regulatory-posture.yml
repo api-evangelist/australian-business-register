@@ -1,0 +1,52 @@
+generated: '2026-10-22'
+method: searched
+probe: true
+source: https://abr.business.gov.au/Tools/WebServicesAgreement
+pages_read:
+- url: https://abr.business.gov.au/Tools/WebServicesAgreement
+  http_status: 200
+  title: Web Services Agreement | ABN Lookup
+- url: https://abr.business.gov.au/Home/PrivacyPolicies
+  http_status: 200
+  title: Privacy policies | ABN Lookup
+  note: 'The page has no privacy terms of its own. It says the service is run by three Commonwealth agencies (DISR,
+    ATO, ASIC) and points to each agency''s privacy policy, so no access, correction or deletion request process
+    is stated on ABN Lookup''s own pages. The dossier flagged data_subject_request on the agreement, but it was
+    a false positive: the phrase "your rights under this agreement" refers to licence rights, not privacy rights.
+    No data_subject_request signal is recorded.'
+signals:
+  data_retention:
+    url: https://abr.business.gov.au/Tools/WebServicesAgreement
+    section: Use of ABN Lookup Web Services
+    evidence:
+    - source: https://abr.business.gov.au/Tools/WebServicesAgreement
+      http_status: 200
+      fetched: '2026-10-22'
+      quote: You acknowledge that details that form part of the ABN Lookup Web Services may subsequently be withdrawn
+        from the ABN Lookup database (for example to protect the privacy of an individual). If we notify you that
+        specific information has been withdrawn you must immediately take all reasonable action to delete all copies
+        of that information in your possession or control.
+    note: This is a retention and deletion duty placed on API consumers, not a retention period for the provider.
+      Data pulled from the ABN Lookup Web Services must be deleted downstream when the register withdraws it, for
+      example for an individual's privacy.
+context:
+  personal_information_sharing:
+    url: https://abr.business.gov.au/Tools/WebServicesAgreement
+    section: Notice
+    evidence:
+    - source: https://abr.business.gov.au/Tools/WebServicesAgreement
+      http_status: 200
+      fetched: '2026-10-22'
+      quote: The ABN Lookup Web Services are administered by the Department of Industry, Science and Resources,
+        Australian Taxation Office and the Australian Securities and Investments Commission. I understand and agree
+        my personal information will be used and disclosed by and between these parties to enable my usage of the
+        ABN Lookup Web Services.
+    - source: https://abr.business.gov.au/Home/PrivacyPolicies
+      http_status: 200
+      fetched: '2026-10-22'
+      quote: Information on how your personal information is handled by each agency can be found in the Department
+        of Industry, Science and Resources privacy policy , Australian Taxation Office privacy policy , and Australian
+        Securities and Investments Commission privacy policy .
+    note: A registrant's personal information is shared among three government agencies, and privacy handling is
+      left to each agency's own policy. This is not a subprocessor list. It is recorded as context and is not mapped
+      to the catalog's subprocessors signal.

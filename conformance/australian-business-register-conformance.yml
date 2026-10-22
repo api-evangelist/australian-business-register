@@ -1,0 +1,16 @@
+generated: '2026-10-22'
+method: searched
+source: https://abr.business.gov.au/Documentation/SampleCodeResources
+standards:
+- id: wsdl-1.1
+  conforms: true
+  evidence: wsdl/australian-business-register-abrxmlsearch.wsdl (wsdl:definitions, provider-hosted at https://abr.business.gov.au/abrxmlsearch/AbrXmlSearch.asmx?WSDL)
+- id: soap-1.1
+  conforms: true
+  evidence: soap:binding in wsdl/australian-business-register-abrxmlsearch.wsdl
+- id: soap-1.2
+  conforms: true
+  evidence: soap12:binding in wsdl/australian-business-register-abrxmlsearch.wsdl
+- id: jsonp
+  conforms: true
+  evidence: "https://abr.business.gov.au/json/ (callback parameter). Tools/WebServices: 'We currently provide limited JSON support for ABN and name searching.'"

@@ -1,0 +1,32 @@
+generated: '2026-10-22'
+method: searched
+source: https://abr.business.gov.au/Documentation/WebServiceMethods
+docs: https://abr.business.gov.au/Documentation/ChangeControl
+scheme: versioned-methods
+current_version: SearchByABNv202001
+note: There is no dated release log. Versions are new web methods, and each name carries a yyyymm stamp. The dates below come only from the Change Control page or from method descriptions; where the docs state no date, date is null (the name stamp is shown in version only). Each new method adds data without breaking earlier methods.
+entries:
+- version: SearchByABNv202001
+  date: null
+  breaking: false
+  highlights: ["Returns everything returned by SearchByABNv201408 plus Approved Worker Entity Fund if they exist for the ABN"]
+- version: SearchByABNv201408
+  date: null
+  breaking: false
+  highlights: ["Returns everything returned by SearchByABNv201205 plus DGR Item Number and ACNC registration where they exist"]
+- version: SearchByABNv201205
+  date: '2012-05'
+  breaking: false
+  highlights: ["Returns everything returned by SearchByABNv200709 plus registered business names where they exist", "Then in May 2012 a new method was released that extended the information returned to include registered business names."]
+- version: SearchByABNv200709
+  date: '2007-09'
+  breaking: false
+  highlights: ["Returns everything returned by SearchByABNv200506 plus superannuation specific information where it exists."]
+- version: SearchByABNv200506
+  date: '2005-07'
+  breaking: false
+  highlights: ["Returns everything returned by ABRSearchByABN plus tax concession information where it exists.", "in July 2005 new legislation was introduced that effected the information recorded about tax concessions."]
+- version: ABRSearchByABN
+  date: '2004'
+  breaking: false
+  highlights: ["Original version released in 2004."]

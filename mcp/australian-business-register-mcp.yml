@@ -1,0 +1,77 @@
+generated: '2026-10-22'
+method: derived
+status: candidate
+source: wsdl/australian-business-register-abrxmlsearch.wsdl
+server:
+  name: Australian Business Register (ABN Lookup) - candidate MCP tool list
+  official: false
+auth:
+  type: api-key
+  description: ABN Lookup web services require an authenticationGuid issued after
+    registering and accepting the Web Services Agreement.
+  docs: https://abr.business.gov.au/Documentation/WebServiceRegistration
+deployment:
+  mode: none
+  endpoint: null
+  install: null
+  package: null
+  auth: api-key
+  verified: derived
+tool_count: 8
+tools:
+- name: lookup_abn
+  description: Look up an ABN's current ABR record (latest ABN search version).
+  backing_operation: SearchByABNv202001
+  protocol: SOAP
+  endpoint: https://abr.business.gov.au/abrxmlsearch/AbrXmlSearch.asmx
+- name: lookup_acn
+  description: Look up the ABN record linked to an ACN/ASIC number.
+  backing_operation: SearchByASICv201408
+  protocol: SOAP
+  endpoint: https://abr.business.gov.au/abrxmlsearch/AbrXmlSearch.asmx
+- name: search_by_name
+  description: Search ABR records by business/entity name with state, postcode and
+    entity-type filters.
+  backing_operation: ABRSearchByNameAdvancedSimpleProtocol2023
+  protocol: SOAP
+  endpoint: https://abr.business.gov.au/abrxmlsearch/AbrXmlSearch.asmx
+- name: search_by_postcode
+  description: List ABNs registered in a postcode.
+  backing_operation: SearchByPostcode
+  protocol: SOAP
+  endpoint: https://abr.business.gov.au/abrxmlsearch/AbrXmlSearch.asmx
+- name: search_by_abn_status
+  description: Search ABNs by postcode, active status, GST registration and entity
+    type.
+  backing_operation: SearchByABNStatus
+  protocol: SOAP
+  endpoint: https://abr.business.gov.au/abrxmlsearch/AbrXmlSearch.asmx
+- name: search_by_charity
+  description: Search ABNs that hold charity endorsements/concessions.
+  backing_operation: SearchByCharity
+  protocol: SOAP
+  endpoint: https://abr.business.gov.au/abrxmlsearch/AbrXmlSearch.asmx
+- name: search_by_registration_event
+  description: Search ABNs registered within a given month/year and postcode/state.
+  backing_operation: SearchByRegistrationEvent
+  protocol: SOAP
+  endpoint: https://abr.business.gov.au/abrxmlsearch/AbrXmlSearch.asmx
+- name: search_by_update_event
+  description: Search ABNs updated since a given date and postcode/state.
+  backing_operation: SearchByUpdateEvent
+  protocol: SOAP
+  endpoint: https://abr.business.gov.au/abrxmlsearch/AbrXmlSearch.asmx
+third_party_servers:
+- name: au-bizintel-mcp (LJ Digital)
+  url: https://socket.dev/npm/package/@ljdigital/au-bizintel-mcp
+  official: false
+- name: Australian Business Verification MCP (arbazex)
+  url: https://glama.ai/mcp/servers/zyz8dg0s6w
+  official: false
+notes: 'No official MCP server is published by the ABR/ATO (web search 2026-10-22;
+  preflight contract_discovery verdict mcp: absent on abr.business.gov.au, abr.gov.au,
+  ablisapi.business.gov.au). The tools are a candidate list derived from real ABRXMLSearch
+  WSDL operations (the latest version of each search family); the WSDL defines 28
+  operations in total. Third-party community servers are listed for reference only
+  and were not called. No OpenAPI exists, so there is no tool crosswalk, overlay or
+  skills.'

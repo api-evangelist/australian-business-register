@@ -1,0 +1,15 @@
+generated: '2026-10-22'
+method: searched
+source: https://abr.business.gov.au/Documentation/WebServiceRegistration
+docs: https://abr.business.gov.au/Documentation/WebServiceMethods
+schemes:
+- name: authenticationGuid
+  type: apiKey
+  in: query
+  parameter: authenticationGuid
+  description: "Registered users get an authentication GUID by email after they accept the web services agreement. The docs say: 'We will process your application and e-mail you an authentication GUID (Globally Unique Identifier) which is required to access the ABN Lookup web services.' The GUID is sent as a request element (authenticationGuid / authenticationGUID) on every SOAP or HTTP GET/POST method, and as the guid parameter on the JSONP services."
+  obtain: https://abr.business.gov.au/Documentation/WebServiceRegistration
+  errors:
+  - The GUID entered is not recognised as a Registered Party
+  - The party identified by this GUID has not been registered for the requested service
+note: There is no OAuth, so no scopes artifact. The credential is a long-lived shared GUID, not a signed token.

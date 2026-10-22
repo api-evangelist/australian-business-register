@@ -1,0 +1,83 @@
+generated: '2026-10-22'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 5
+  own: 1
+  other_domain: 4
+  platform: 0
+  roles:
+  - api
+  - other
+  - portal
+  - security
+  - website
+hosts:
+- host: ablisapi.business.gov.au
+  found_by:
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: business.gov.au
+  role: other
+  relation: other-domain
+- host: abr.business.gov.au
+  found_by:
+  - pointer
+  - apis[]
+  - probed
+  - docs-index
+  - contract-discovery
+  - well-known
+  types:
+  - DeveloperPortal
+  - Documentation
+  - APIReference
+  - GettingStarted
+  - SignUp
+  - SampleCode
+  - ChangeLog
+  - Support
+  - FAQ
+  - TermsOfService
+  - PrivacyPolicy
+  - About
+  serves:
+  - api
+  - docs
+  registrable_domain: business.gov.au
+  role: portal
+  relation: other-domain
+- host: abr.gov.au
+  found_by:
+  - pointer
+  - probed
+  - contract-discovery
+  - well-known
+  types:
+  - Website
+  serves: []
+  registrable_domain: abr.gov.au
+  role: website
+  relation: own
+- host: api.gov.au
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: api.gov.au
+  role: api
+  relation: other-domain
+- host: www.ato.gov.au
+  found_by:
+  - pointer
+  types:
+  - Security
+  serves: []
+  registrable_domain: ato.gov.au
+  role: security
+  relation: other-domain

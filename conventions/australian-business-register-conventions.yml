@@ -1,0 +1,33 @@
+generated: '2026-10-22'
+method: searched
+source: https://abr.business.gov.au/Documentation/WebServiceMethods
+auth:
+  style: GUID request parameter (authenticationGuid)
+  see: authentication/australian-business-register-authentication.yml
+protocols:
+- SOAP 1.1 and SOAP 1.2, document style (https://abr.business.gov.au/abrxmlsearch/AbrXmlSearch.asmx)
+- SOAP RPC style encoding (https://abr.business.gov.au/abrxmlsearchRPC/AbrXmlSearch.asmx)
+- HTTP GET/POST ("All versions are accessible using SOAP or Http get/post protocols.")
+- JSONP with a callback parameter (https://abr.business.gov.au/json/)
+read_only: true
+read_only_evidence: "No, you cannot update your ABN details or apply for an ABN using the ABN Lookup web services."
+idempotency:
+  coverage: na
+  note: Every method is a search or lookup, so there is no write surface to protect.
+reversibility:
+  status: na
+  note: Read-only API. No write operations exist to reverse.
+dry_run_mode: na
+pagination:
+  style: none
+  note: Name search exposes a maxSearchResults-style cap ("Control how many matching names are returned by the name search"). No paging cursor is documented.
+versioning:
+  style: new method per data change (e.g. SearchByABNv202001)
+  see: lifecycle/australian-business-register-lifecycle.yml
+errors:
+  envelope: exceptionCode + exceptionDescription inside the response payload
+  see: errors/australian-business-register-error-codes.yml
+rate_limit_signaling:
+  documented: false
+  see: rate-limits/australian-business-register-rate-limits.yml
+request_id: none documented
